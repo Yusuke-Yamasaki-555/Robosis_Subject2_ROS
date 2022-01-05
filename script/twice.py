@@ -3,30 +3,33 @@
 
 import rospy
 from std_msgs.msg import Int32
+# from std_srvs.srv import SetBool
 
 n = 0
 
 def main():
-    rospy.init_node('twice')
+    rospy.init_node('main')
 
-    sub = rospy.Subscriber('count_up', Int32, cb)
+    cup = rospy.Subscriber('count_up', Int32, cb_cup)
     rospy.loginfo("Start Subscriber 'count_up'")
-    
-    pub = rospy.Publisher('twice', Int32, queue_size=1)
-    rospy.loginfo("Start Publisher 'twice'")
+
+    # che = rospy.ServiceProxy('check', SetBool)
+    rospy.loginfo("Waiting check-server")
+    # che.wait_for_server()
+    rospy.loginfo("Start che-server")
 
     rate = rospy.Rate(10)
 
     while not rospy.is_shutdown():
-        pub.publish(n)
-        print(n)
-        rate.sleep()
+        #che_res = che(n)
+        #print(n)
+        #rate.sleep()
 
 
-def cb(message):
+def cb_cup(message):
     global n
     
-    n = message.data*2
+    n = message.data
 
 
 if __name__ == '__main__':

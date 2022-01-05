@@ -16,7 +16,7 @@ def main():
     while not rospy.is_shutdown():
         n += 1
         pub.publish(n)
-        print(n)
+        # print(n)
         rate.sleep()
 
 
