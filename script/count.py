@@ -11,7 +11,8 @@ def main():
     rospy.loginfo("Start publisher 'count_up'")
 
     rate = rospy.Rate(10)
-    n = 0
+
+    n = -3
 
     while not rospy.is_shutdown():
         n += 1

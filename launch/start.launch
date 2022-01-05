@@ -1,4 +1,5 @@
 <launch>
   <node pkg="mypkg" type="count.py" name="count" output="screen"/>
-  <node pkg="mypkg" type="twice.py" name="twice" output="screen"/>
+  <node pkg="mypkg" type="check.py" name="check" output="screen"/>
+  <node pkg="mypkg" type="main.py" name="main" output="screen"/>
 </launch>

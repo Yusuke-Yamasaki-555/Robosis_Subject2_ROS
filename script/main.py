@@ -3,33 +3,39 @@
 
 import rospy
 from std_msgs.msg import Int32
-# from std_srvs.srv import SetBool
+from mypkg.srv import SetInt
 
-n = 0
+n = -3
 
 def main():
+    global n
+
     rospy.init_node('main')
 
     cup = rospy.Subscriber('count_up', Int32, cb_cup)
     rospy.loginfo("Start Subscriber 'count_up'")
 
-    # che = rospy.ServiceProxy('check', SetBool)
+    check = rospy.ServiceProxy('check', SetInt)
     rospy.loginfo("Waiting check-server")
-    # che.wait_for_server()
+    rospy.wait_for_service('check')
     rospy.loginfo("Start che-server")
 
     rate = rospy.Rate(10)
 
+    print("Number | Least common multiple")
+
     while not rospy.is_shutdown():
-        #che_res = che(n)
-        #print(n)
-        #rate.sleep()
+        check_b = int(n)
+        check_res = check(check_b)
+
+        print("   "+str(n)+"  | "+check_res.result)
+        rate.sleep()
 
 
 def cb_cup(message):
     global n
     
-    n = message.data
+    n = int(message.data)
 
 
 if __name__ == '__main__':
