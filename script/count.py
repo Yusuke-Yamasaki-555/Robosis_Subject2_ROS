@@ -13,9 +13,10 @@ def main():
     rate = rospy.Rate(10)
     n = 0
 
-    while True:
+    while not rospy.is_shutdown():
         n += 1
         pub.publish(n)
+        print(n)
         rate.sleep()
 
 

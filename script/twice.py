@@ -17,8 +17,9 @@ def main():
 
     rate = rospy.Rate(10)
 
-    while True:
+    while not rospy.is_shutdown():
         pub.publish(n)
+        print(n)
         rate.sleep()
 
 
@@ -32,6 +33,7 @@ if __name__ == '__main__':
     try:
         if not rospy.is_shutdown():
             main()
+
     except rospy.ROSInterruptException:
         pass
 
