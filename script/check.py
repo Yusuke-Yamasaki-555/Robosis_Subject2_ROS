@@ -15,10 +15,12 @@ def main():
 def check(data):
     resp = SetIntResponse()
 
-    if data.data != 0 and data.data%2 == 0:
-        resp.result = str(2)
-    else:
-        resp.result = str(None)
+    resp.result.append(True)
+
+#    if data.data != 0 and data.data%2 == 0:
+#        resp.result = str(2)
+#    else:
+#        resp.result = str(None)
 
     return resp
 

@@ -34,7 +34,8 @@ def main():
         check_b = int(n)
         check_res = check(check_b)
 
-        print("   "+str(n)+"  | "+check_res.result) # -3だけ出力させないようにしたほうが良さげ
+        print(check_res.result[0])
+#        print("   "+str(n)+"  | "+check_res.result) # -3だけ出力させないようにしたほうが良さげ
         rate.sleep()
 
 
