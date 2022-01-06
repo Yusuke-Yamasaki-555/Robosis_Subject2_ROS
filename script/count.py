@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
-# The Publisher
+
+'''License
+ SPDX-License-Identifier:MIT
+ Copyright (C) 2022 Yusuke Yamasaki & Ryuichi Ueda. All Rights Reserved.
+'''
 
 import rospy
 from std_msgs.msg import Int32

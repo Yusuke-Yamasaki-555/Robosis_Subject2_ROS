@@ -1,3 +1,5 @@
+<!-- SPDX-License-Identifier:MIT -->
+<!-- Copyright Yusuke Yamasaki. All Rights Reserved. -->
 <launch>
   <node pkg="mypkg" type="count.py" name="count" output="screen"/>
   <node pkg="mypkg" type="check.py" name="check" output="screen"/>
