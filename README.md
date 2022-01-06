@@ -4,10 +4,10 @@
 - このリポジトリは、ROSを用いて素数の倍数を探索・判定し出力するプログラムのパッケージです。対応している素数は２～２９までの、計１０個となっています。
 ---
 ## 動作確認環境
-- ・機種：Raspberry Pi 3B+
-- ・OS：Ubuntu 20.04.3 LTS
-- ・容量：microSD 16GB
-- ・ROS：noetic 1.15.13
+- 機種：Raspberry Pi 3B+
+- OS：Ubuntu 20.04.3 LTS
+- 容量：microSD 16GB
+- ROS：noetic 1.15.13
 ---
 ## 実行手順
 ### 0.環境構築
