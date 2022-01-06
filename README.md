@@ -39,5 +39,5 @@ $ roslaunch robosis_subject2_ros start.launch
 - プログラムを終了する際は、Ctrl+Cを入力してください。
 ---
 ## ライセンスについて
-- このリポジトリは、*MIT License*をライセンスとしています。詳細は*LICENSE*ファイルをご参照ください。
-- このリポジトリに含まれるプログラムには、Ryuichi Ueda様から公開されている[こちら](https://github.com/Yusuke-Yamasaki-555/robosys2020/blob/master/md/ros.md)に記載されているプログラムコードを含んでいます。プログラムの著作権については、各プログラムの著作権表示と*package.xml*をご確認ください。
+- このリポジトリは、**MIT License**をライセンスとしています。詳細は**LICENSE**ファイルをご参照ください。
+- このリポジトリに含まれるプログラムには、Ryuichi Ueda様から公開されている[こちら](https://github.com/Yusuke-Yamasaki-555/robosys2020/blob/master/md/ros.md)に記載されているプログラムコードを含んでいます。プログラムの著作権については、各プログラムの著作権表示と**package.xml**をご確認ください。
