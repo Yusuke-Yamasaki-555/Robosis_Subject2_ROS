@@ -32,8 +32,8 @@ $ source ~/.bashrc
 $ roslaunch robosis_subject2_ros start.launch
 ```
 - 実行すると以下の画像のように、行に数字、列に素数が対応した表が永遠に出力されます。数字が素数の倍数となっていれば「 ● 」が付くようになっています。
-(<画像>)
-- 実際に実行した際の様子は[こちら](<youtube>)
+![image](https://user-images.githubusercontent.com/91410662/148417419-fcda2594-170c-4b53-b482-1a0460ac1fa4.png)
+- 実際に実行した際の様子は[こちら](https://www.youtube.com/watch?v=RPXsHVRuDxc)(パッケージの名前が実際とは異なっていますが、実行内容に差異はありません)
 - プログラムを終了する際は、Ctrl+Cを入力してください。
 ---
 ## ライセンスについて
