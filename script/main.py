@@ -26,9 +26,26 @@ def main():
 
     rate = rospy.Rate(10)
 
+    rospy.sleep(0.5)
+    rospy.loginfo("Start Program")
+
+    rospy.sleep(0.5)
+    print("\n\
+  ==================================================================\n\
+  ==    素数の倍数を判定するプログラムです。                      ==\n\
+  ==    対象の素数は、２～２９の範囲にある１０個となっています。  ==\n\
+  ==    左端の数字が素数の倍数になっていれば、　　　　　　　　　　==\n\
+  ==  その素数に対応する列に●印が付きます。                      ==\n\
+  ==                                                              ==\n\
+  ==    このプログラムは無限に続く仕様になっています。            ==\n\
+  ==    プログラム終了方法：Ctrl+Cを入力                          ==\n\
+  ==================================================================\n")
+
+    rospy.sleep(1.0)
     print(" 数字 | 2  | 3  | 5  | 7  | 11 | 13 | 17 | 19 | 23 | 29 |")
     print("ーーーーーーーーーーーーーーーーーーーーーーーーーーーーー")
-
+    
+    rospy.sleep(0.5)
     while not rospy.is_shutdown():
         if int(n) == -2:
             continue
@@ -36,16 +53,16 @@ def main():
         check_res = check(int(n))
 
         print("   " + str(n) + "  | " + \
-                ("● " if check_res.result[0] else "  ") + " | " + \
-                ("● " if check_res.result[1] else "  ") + " | " + \
-                ("● " if check_res.result[2] else "  ") + " | " + \
-                ("● " if check_res.result[3] else "  ") + " | " + \
-                ("● " if check_res.result[4] else "  ") + " | " + \
-                ("● " if check_res.result[5] else "  ") + " | " + \
-                ("● " if check_res.result[6] else "  ") + " | " + \
-                ("● " if check_res.result[7] else "  ") + " | " + \
-                ("● " if check_res.result[8] else "  ") + " | " + \
-                ("● " if check_res.result[9] else "  ") + " |")
+                ("●" if check_res.result[0] else "  ") + " | " + \
+                ("●" if check_res.result[1] else "  ") + " | " + \
+                ("●" if check_res.result[2] else "  ") + " | " + \
+                ("●" if check_res.result[3] else "  ") + " | " + \
+                ("●" if check_res.result[4] else "  ") + " | " + \
+                ("●" if check_res.result[5] else "  ") + " | " + \
+                ("●" if check_res.result[6] else "  ") + " | " + \
+                ("●" if check_res.result[7] else "  ") + " | " + \
+                ("●" if check_res.result[8] else "  ") + " | " + \
+                ("●" if check_res.result[9] else "  ") + " |")
         print("ーーーーーーーーーーーーーーーーーーーーーーーーーーーーー")
         rate.sleep()
 
