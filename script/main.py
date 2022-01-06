@@ -16,20 +16,7 @@ def main():
 
     rospy.init_node('main')
 
-    cup = rospy.Subscriber('count_up', Int32, cb_cup)
-    rospy.loginfo("Start Subscriber 'count_up'")
-
-    check = rospy.ServiceProxy('check', SetInt)
-    rospy.loginfo("Waiting check-server")
-    rospy.wait_for_service('check')
-    rospy.loginfo("Start che-server")
-
-    rate = rospy.Rate(10)
-
-    rospy.sleep(0.5)
     rospy.loginfo("Start Program")
-
-    rospy.sleep(0.5)
     print("\n\
   ==================================================================\n\
   ==    素数の倍数を判定するプログラムです。                      ==\n\
@@ -41,11 +28,19 @@ def main():
   ==    プログラム終了方法：Ctrl+Cを入力                          ==\n\
   ==================================================================\n")
 
-    rospy.sleep(1.0)
+    cup = rospy.Subscriber('count_up', Int32, cb_cup)
+    rospy.loginfo("Start Subscriber 'count_up'")
+
+    check = rospy.ServiceProxy('check', SetInt)
+    rospy.loginfo("Waiting check-server")
+    rospy.wait_for_service('check')
+    rospy.loginfo("Start che-server")
+
+    rate = rospy.Rate(10)
+
     print(" 数字 | 2  | 3  | 5  | 7  | 11 | 13 | 17 | 19 | 23 | 29 |")
     print("ーーーーーーーーーーーーーーーーーーーーーーーーーーーーー")
     
-    rospy.sleep(0.5)
     while not rospy.is_shutdown():
         if int(n) == -2:
             continue
