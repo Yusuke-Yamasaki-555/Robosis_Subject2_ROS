@@ -1,17 +1,11 @@
 #!/usr/bin/env python3
-'''
-その数字を割り切ることが出来る素数を判定して、結果を出力していきたい。
 
-素数：2, 3, 5, 7, 11, 13, 17, 19, 23, 29, ・・・
-
-課題：serviceで使用するmessageの型に、リストを使えるのかどうか(数値ならいけることはわかっている。文字でいけるかが問題)（文字でいけなくても数値で判定してまた別の手段で置き換えてやればいい）
-'''
 
 import rospy
 from std_msgs.msg import Int32
 from mypkg.srv import SetInt
 
-n = -3
+n = -2
 
 def main():
     global n
@@ -28,14 +22,27 @@ def main():
 
     rate = rospy.Rate(10)
 
-    print("Number | Least common multiple")
+    print(" 数字 | 2  | 3  | 5  | 7  | 11 | 13 | 17 | 19 | 23 | 29 |")
+    print("ーーーーーーーーーーーーーーーーーーーーーーーーーーーーー")
 
     while not rospy.is_shutdown():
-        check_b = int(n)
-        check_res = check(check_b)
+        if int(n) == -2:
+            continue
 
-        print(check_res.result[0])
-#        print("   "+str(n)+"  | "+check_res.result) # -3だけ出力させないようにしたほうが良さげ
+        check_res = check(int(n))
+
+        print("   " + str(n) + "  | " + \
+                ("● " if check_res.result[0] else "  ") + " | " + \
+                ("● " if check_res.result[1] else "  ") + " | " + \
+                ("● " if check_res.result[2] else "  ") + " | " + \
+                ("● " if check_res.result[3] else "  ") + " | " + \
+                ("● " if check_res.result[4] else "  ") + " | " + \
+                ("● " if check_res.result[5] else "  ") + " | " + \
+                ("● " if check_res.result[6] else "  ") + " | " + \
+                ("● " if check_res.result[7] else "  ") + " | " + \
+                ("● " if check_res.result[8] else "  ") + " | " + \
+                ("● " if check_res.result[9] else "  ") + " |")
+        print("ーーーーーーーーーーーーーーーーーーーーーーーーーーーーー")
         rate.sleep()
 
 

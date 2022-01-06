@@ -12,7 +12,7 @@ def main():
 
     rate = rospy.Rate(10)
 
-    n = -3
+    n = -2
 
     while not rospy.is_shutdown():
         n += 1
